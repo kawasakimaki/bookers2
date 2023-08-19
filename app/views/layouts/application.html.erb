@@ -6,11 +6,13 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <script src="https://kit.fontawesome.com/650dce115d.js" crossorigin="anonymous"></script>
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+    <!--header-->
     <header>
       <% if user_signed_in? %>
         <%= link_to 'Bookers', '/' %>
@@ -21,11 +23,16 @@
       <% else %>
         <%= link_to 'Bookers', '/' %>
         <%= link_to 'Home', '/' %>
-        <%= link_to 'Abouto', 'homes/about' %>
+        <%= link_to 'About', 'home/about' %>
         <%= link_to 'Sign up', new_user_registration_path %>
         <%= link_to 'Log in', new_user_session_path %>
       <% end %>
     </header>
+
+    <!--footer-->
+    <footer>
+      <p>CopyRight Infratop.inc</p>
+    </footer>
     <%= yield %>
   </body>
 </html>
