@@ -1,2 +1,12 @@
-<h1>Boos#show</h1>
-<p>Find me in app/views/boos/show.html.erb</p>
+<h2>Book detail</h2>
+<table>
+  <tr>
+    <td>
+
+      <%= current_user.name %>
+    </td>
+    <td></td>
+    <td><%= link_to 'Edit',  edit_book_path %></td>
+    <td><%= link_to 'Destroy', books_path %></td>
+  </tr>
+</table>
