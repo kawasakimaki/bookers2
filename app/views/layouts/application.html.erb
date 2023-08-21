@@ -15,14 +15,14 @@
     <!--header-->
     <header>
       <% if user_signed_in? %>
-        <%= link_to 'Bookers', 'root_path' %>
+        <%= link_to 'Bookers', root_path %>
         <%= link_to 'Home', user_path(current_user) %>
         <%= link_to 'Users', users_path %>
         <%= link_to 'Books', books_path %>
         <%= link_to 'Log out', destroy_user_session_path, method: :delete %>
       <% else %>
-        <%= link_to 'Bookers', 'root_path' %>
-        <%= link_to 'Home', 'root_path' %>
+        <%= link_to 'Bookers', root_path %>
+        <%= link_to 'Home', root_path %>
         <%= link_to 'About', 'home/about' %>
         <%= link_to 'Sign up', new_user_registration_path %>
         <%= link_to 'Log in', new_user_session_path %>
