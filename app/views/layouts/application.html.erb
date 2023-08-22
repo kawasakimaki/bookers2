@@ -12,6 +12,9 @@
   </head>
 
   <body>
+    <div>
+      <%= flash[:notice] %>
+    </div>
     <!--header-->
     <header>
       <% if user_signed_in? %>
