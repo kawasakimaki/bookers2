@@ -17,19 +17,60 @@
     </div>
     <!--header-->
     <header>
-      <% if user_signed_in? %>
-        <%= link_to 'Bookers', root_path %>
-        <%= link_to 'Home', user_path(current_user) %>
-        <%= link_to 'Users', users_path %>
-        <%= link_to 'Books', books_path %>
-        <%= link_to 'Log out', destroy_user_session_path, method: :delete %>
-      <% else %>
-        <%= link_to 'Bookers', root_path %>
-        <%= link_to 'Home', root_path %>
-        <%= link_to 'About', 'home/about' %>
-        <%= link_to 'Sign up', new_user_registration_path %>
-        <%= link_to 'Log in', new_user_session_path %>
-      <% end %>
+      <nav class="navbar navbar-dark bg-dark">
+        <div class="container-fluid">
+          <% if user_signed_in? %>
+            <div class="navbar-brand">
+              <%= link_to 'Bookers', root_path %>
+            </div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav">
+                <li class="nav-item active">
+                  <i class="fa-solid fa-link"></i>
+                  <%= link_to 'Home', user_path(current_user) %>
+                </li>
+                <li class="nav-item active">
+                  <i class="fa-solid fa-users"></i>
+                  <%= link_to 'Users', users_path %>
+                </li>
+                <li class="nav-item active">
+                  <i class="fa-solid fa-book-open"></i>
+                  <%= link_to 'Books', books_path %>
+                </li>
+                <li class="nav-item active">
+                  <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                  <%= link_to 'Log out', destroy_user_session_path, method: :delete %>
+                </li>
+              </ul>
+            </div>
+        </div>
+          <% else %>
+             <div class="navbar-brand">
+              <%= link_to 'Bookers', root_path %>
+            </div>
+            <ul class="navbar-nav">
+              <li class="nav-item active">
+                <i class="fa-solid fa-house-chimney"></i>
+                <%= link_to 'Home', root_path %>
+              </li>
+              <li class="nav-item active">
+                <i class="fa-solid fa-link"></i>
+                <%= link_to 'About', 'home/about' %>
+              </li>
+              <li class="nav-item active">
+                <i class="fa-solid fa-user-plus"></i>
+                <%= link_to 'Sign up', new_user_registration_path %>
+              </li>
+              <li class="nav-item active">
+                <i class="fa-solid fa-right-to-bracket"></i>
+                <%= link_to 'Log in', new_user_session_path %>
+              </li>
+            </ul>
+          <% end %>
+      </nav>
     </header>
 
     <!--footer-->
